@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>PushSharp</id>
-        <version>2.0.5.0</version>
+        <version>2.0.6.0</version>
         <title>PushSharp</title>
         <authors>bberak</authors>
         <owners>bberak</owners>
@@ -12,7 +12,9 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A server-side library for sending Push Notifications to iOS (iPhone/iPad APNS &amp; PassKit), Mac OSX (Mountain Lion+), Android (GCM/C2DM), Windows Phone 7/8, Windows 8, and FirefoxOS (soon)</description>
         <summary>A server-side library for sending Push Notifications to iOS (iPhone/iPad APNS &amp; PassKit), Mac OSX (Mountain Lion+), Android (GCM/C2DM), Windows Phone 7/8, Windows 8, and FirefoxOS (soon)</summary>
-        <releaseNotes>2.0.5 - Changed SSL Protocol from SSL3 to TLS for APNS
+        <releaseNotes>2.0.6 - Removed some validation that was causing problems with new cert names
+
+2.0.5 - Changed SSL Protocol from SSL3 to TLS for APNS
 
 2.0.4 - Fixed bug causing crash
 

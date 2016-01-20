@@ -83,7 +83,7 @@ namespace PushSharp.Apple
 			{
 				var subjectName = certificate.SubjectName.Name;
 
-				if (subjectName.Contains("Apple Production IOS Push Services"))
+                if (subjectName.Contains("Apple Production IOS Push Services") || subjectName.Contains("Apple Push Services"))
 					production = true;
 			}
 			
@@ -98,14 +98,7 @@ namespace PushSharp.Apple
 				var subjectName = this.Certificate.SubjectName.Name;
 
 				if (!issuerName.Contains("Apple"))
-					throw new ArgumentException("Your Certificate does not appear to be issued by Apple!  Please check to ensure you have the correct certificate!");
-
-				if (production && !subjectName.Contains("Apple Production IOS Push Services"))
-					throw new ArgumentException("You have selected the Production server, yet your Certificate does not appear to be the Production certificate!  Please check to ensure you have the correct certificate!");
-
-
-				if (!production && !subjectName.Contains("Apple Development IOS Push Services"))
-						throw new ArgumentException("You have selected the Development/Sandbox (Not production) server, yet your Certificate does not appear to be the Development/Sandbox certificate!  Please check to ensure you have the correct certificate!");				
+					throw new ArgumentException("Your Certificate does not appear to be issued by Apple!  Please check to ensure you have the correct certificate!");			
 			}
 			else
 				throw new ArgumentNullException("You must provide a Certificate to connect to APNS with!");
